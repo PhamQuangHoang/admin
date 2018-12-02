@@ -3,12 +3,13 @@
 <head>
 
 	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- Latest compiled JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="test.css">
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+	<link rel="stylesheet" type="text/css" href="test.css?v=<?php echo mt_rand(); ?>">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 </head>
 <script type="text/javascript">
 	// dynamictab
@@ -39,22 +40,51 @@
 				</div>
 				<!-- collapse -->
 				<div class="collapse navbar-collapse" id="navbar-collapse-4">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">ql bán hàng</a></li>
-						<li><a href="#">quản lý hàng</a></li>
-						<li><a href="#">quản lý tài khoản</a></li>
-						<li><a href="#">phiếu in</a></li>
-						<li><a href="#">cài đặt</a></li>
+					<ul class="nav navbar-nav navbar-right slide-down">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">ql bán hàng</a>
+							<ul class="dropdown-menu text-light-bg-dark">
+								<li><a href="#">thống kê bill</a></li>
+								<li><a href="#">thống kê thu chi</a></li>
+								<li><a href="#">thống kê theo món</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">quản lý hàng</a>
+							<ul class="dropdown-menu text-light-bg-dark">
+								<li><a href="#">nhóm menu thực đơn</a></li>
+								<li><a href="#">menu thực đơn</a></li>
+								<li><a href="#">nhóm nguyên liệu</a></li>
+								<li><a href="#">thêm nguyên liệu</a></li>
+								<li><a href="#">nhập kho nguyên liệu</a></li>
+								<li><a href="#">danh sách nhập kho</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">phiếu in</a>
+							<ul class="dropdown-menu text-light-bg-dark">
+								<li><a href="#">phiếu thu</a></li>
+								<li><a href="#">phiếu chi</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">cài đặt</a>
+							<ul class="dropdown-menu text-light-bg-dark">
+								<li><a href="#">thông tin quán cafe của bạn</a></li>
+								<li><a href="#">chương trình khuyến mãi</a></li>
+								<li><a href="#">cài đặt máy in</a></li>
+							</ul>
+						</li>
 
 						<li>
-							<a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse4" aria-expanded="false" aria-controls="nav-collapse4">Profile <i class=""></i> </a>
+							<a class="btn btn-default btn-outline btn-circle collapsed" data-toggle="collapse" href="#nav-collapse" aria-expanded="false" aria-controls="nav-collapse">Profile <i class=""></i> </a>
 						</li>
 					</ul>
-					<ul class="collapse nav navbar-nav nav-collapse slide-down" role="search" id="nav-collapse4">
+					<ul class="collapse nav navbar-nav nav-collapse slide-down" role="profile" id="nav-collapse">
 						<li><a href="#">Support</a></li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img class="img-circle" src="https://pbs.twimg.com/profile_images/588909533428322304/Gxuyp46N.jpg" alt="maridlcrmn" width="20" />Maridlcrmn <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="" width="20" />Maridlcrmn<span class="caret"></span></a>
+							<ul class="dropdown-menu text-light-bg-dark">
 								<li><a href="#">My profile</a></li>
 								<li><a href="#">Permission</a></li>
 								<li><a href="#">Settings</a></li>
@@ -94,8 +124,7 @@
 				<div class="col-lg-11 col-md-11 col-sm-10 col-xs-10 bhoechie-tab">
 					<!-- flight section -->
 					<div class="bhoechie-tab-content active">
-						<!-- <?php include_once 'listmenu.php'; ?> -->
-
+						<?php include_once 'listmenu.php'; ?>
 
 					</div>
 					<!-- train section -->
@@ -120,8 +149,5 @@
 			</div>
 		</div>
 	</div>
-	<!-- jQuery library -->
-
-
 </body>
 </html>

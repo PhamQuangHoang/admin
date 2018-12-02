@@ -1,11 +1,11 @@
-.navbar-brand { position: relative; z-index: 2;font-weight: bold; }
+.navbar-brand {z-index: 2;font-weight: bold; }
 
-.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
+.navbar-nav.navbar-right .btn {z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
+.navbar-nav.navbar-right{ position: absolute; right: 5%}
+.navbar .navbar-collapse {overflow: hidden !important; }
+.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 100px; }
 
-.navbar .navbar-collapse { position: relative; overflow: hidden !important; }
-.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
-
-.navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
+.navbar .nav-collapse {position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right:15%;width: 100%; }
 .navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
 .navbar.navbar-inverse .nav-collapse { background-color: #222; }
 .navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
@@ -106,17 +106,38 @@ div.bhoechie-tab-content{
   /*padding-left: 20px;
   padding-top: 10px;*/
 }
-
-
+.text-light-bg-dark{
+  background-color: #222;
+}
+.text-light-bg-dark>li a{
+  color:#9d9d9d;
+}
+.text-light-bg-dark li a:hover{
+  color:white;
+  background-color: black;
+}
 div.bhoechie-tab div.bhoechie-tab-content:not(.active){
   display: none;
 }
+/*listmenu.php*/
+.menu-right-head>p{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.menu-right{
+  padding: 15px;
+  border: solid 1px gray;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
 @media screen and (max-width: 995px) {
-	.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; }
-
-	.navbar .nav-collapse { margin: 7.5px auto; padding: 0; }
+	.navbar .navbar-collapse .navbar-right li a { padding-left: 15px; padding-right: 15px; }
+  .navbar-nav.navbar-right{ position: relative; margin-left: 10%; }
+	.navbar .nav-collapse { margin: 7.5px auto; padding-top: 25px; }
 	.navbar .nav-collapse .navbar-form { margin: 0; }
-	.nav-collapse>li { float: none; }
+	.nav-collapse>li { float: left; }
 
 	.navbar.navbar-default .nav-collapse,
 	.navbar.navbar-inverse .nav-collapse {

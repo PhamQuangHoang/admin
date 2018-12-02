@@ -1,7 +1,4 @@
 <script type="text/javascript" src="js/qlban.js">
-
-
-
 </script>
 
 
@@ -61,10 +58,8 @@
 	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 				Do con cax !!
 
-			</div>
+	</div>
 </div>
-
-
 
 
 		<div class="detailtable hidden" id="detailtable">
@@ -115,15 +110,10 @@
 					  </thead>
 					  <tbody id="databody">
 
-
 					  </tbody>
 			</table>
 				</div>
 				<div class="infomation ">
-
-
-
-
 					 <ul class="nav nav-tabs text-center">
 						 	<li >Tên hàng :	<input type="text" id="editqty" style=" text-align:center;" name="" value="" disabled="true"> | <button type="button" id="huymon" name="button">Hủy món</button></li>
 					 	<li>
@@ -190,7 +180,7 @@
 																<th scope="row">1</th>
 																<td>
 																	<label class="task">
-																		<input type="checkbox" class="mainlist" name="checkbox" data-ref="1" value="Phin sửa nóng|290000">
+																		<inpƯut type="checkbox" class="mainlist" name="checkbox" data-ref="1" value="Phin sửa nóng|290000">
 																		<i class="fas fa-check"></i>
 																		<span class="text">Phin sửa nóng</span>
 																	</label></td>
