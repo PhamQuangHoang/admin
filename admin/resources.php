@@ -1,4 +1,22 @@
-<script type="text/javascript" src="js/qlban.js">
+<script type="text/javascript" >
+function showdata(id){
+    	
+     $.ajax({
+        type:'post',
+          url: "ajaxcall.php",
+        data:{
+          typeid:id
+        },
+        success:function(response) {
+          $('.result').html(response);
+        }
+      });
+
+     
+    
+}
+
+
 </script>
 <?php require_once 'config.php';
 	$config = new Config;
@@ -8,11 +26,11 @@
 	<ul class="list-group-item list-unstyled">
 		<li style="font-weight: bold;">TÊN NHÓM HÀNG HÓA</li>
 		<?php foreach ($result as $rows) { ?>
-			<form action="" method="POST" id="src_form">
-			<?php echo '<li><input type="submit" class="btn-block btn-default" onclick="load_ajax()" name="choose_resources_type" value="'.$rows['type_name'].'" />
-							<input type="hidden" name="type_id" value="'.$rows['type_id'].'" />
+			
+			<?php echo '<li><input type="submit" class="btn-block btn-default" onclick="showdata('.$rows['type_id'].');"  id="'.$rows['type_id'].'" name="choose_resources_type" value="'.$rows['type_name'].'" />
+							
 						</li>'; ?>
-			</form>
+			
 		<?php } ?>
 	</ul>
 </div>
@@ -35,27 +53,10 @@
 		</div>
 	</div>
 	
-	<?php if(isset($_POST['type_id'])){
-		$result_right = $config->selectData('select * from resources where type_id = '.$_POST['type_id']);
-		foreach ($result_right as $rows_right) {
+	<div class="result">
 		
-	?>
-	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 menu-right">
-		<?php echo $rows_right['src_name'] ?>
+
+
+
 	</div>
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 menu-right">
-		<?php echo $rows_right['src_id'] ?>
-	</div>
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4 menu-right">
-		<?php echo $rows_right['unit'] ?>
-	</div>
-	<div class="col-lg-2 col-md-3 col-sm-3 col-xs-4 menu-right">
-		<?php echo $rows_right['buy_price'] ?>
-	</div>
-	<div class="col-lg-3 col-md-2 col-sm-2 col-xs-4 menu-right">
-		<?php echo $rows_right['quantity'] ?>
-	</div>
-	<?php 
-		}
-	 } ?>
 </div>

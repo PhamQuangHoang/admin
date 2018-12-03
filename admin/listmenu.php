@@ -1,5 +1,5 @@
-<script type="text/javascript" src="js/qlban.js">
-</script>
+<!-- <script type="text/javascript" src="js/qlban.js">
+</script> -->
 <?php require_once 'config.php';
 	$config = new Config;
 	$result = $config->selectData('select * from type_drink');

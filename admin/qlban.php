@@ -2,54 +2,109 @@
 </script>
 
 
+<input type="submit" id="test" name="" value="Set cookie">
+<div class="table-responsive" id="mytable"> </div>
 <div id="ordertable">
 	<div class="col-lg-6 col-md-6 col-sm-12-col-xs-12 table-bordered order-table">
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
-			<a href="javascript:void(0)" class="text-center" onclick="startup(id);" id="1">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" <?php 
+				if(isset($_COOKIE['ban1'])) echo 'style="background-color: #333; "';
+
+
+			 ?>
+			 >
+			<a href="javascript:void(0)" class="text-center" onclick="startup(id);"  id="1">
 				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 1
 			</a>
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" <?php 
+				if(isset($_COOKIE['ban2	'])) echo 'style="background-color: #333; "';
+
+
+			 ?> >
 			<a href="javascript:void(0)" class="text-center" onclick="startup(id);" id="2">
 				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 2
 			</a>
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" <?php 
+				if(isset($_COOKIE['ban3'])) echo 'style="background-color: #333; "';
+
+
+			 ?> 
+			 >
 			<a href="javascript:void(0)" class="text-center" onclick="startup(id);" id="3">
 				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 3
 			</a>
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" <?php 
+				if(isset($_COOKIE['ban4'])) echo 'style="background-color: #333; "';
+
+
+			 ?>
+			 >
 			<a href="javascript:void(0)" class="text-center" onclick="startup(id);" id="4">
 				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 4
 			</a>
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" <?php 
+				if(isset($_COOKIE['ban5'])) echo 'style="background-color: #333; "';
+
+
+			 ?>
+			 >
 			<a href="javascript:void(0)" class="text-center" onclick="startup(id);" id="5">
 				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 5
 			</a>
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3"  <?php 
+				if(isset($_COOKIE['ban6'])) echo 'style="background-color: #333; "';
+
+
+			 ?>>
 			<a href="javascript:void(0)" class="text-center" onclick="startup(id);" id="6">
 				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 6
 			</a>
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" <?php 
+				if(isset($_COOKIE['ban7'])) echo 'style="background-color: #333; "';
+
+
+			 ?>>
 			<a href="javascript:void(0)" class="text-center" onclick="startup(id);" id="7">
 				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 7
 			</a>
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" <?php 
+				if(isset($_COOKIE['ban8'])) echo 'style="background-color: #333; "';
+
+
+			 ?>>
+			<a href="javascript:void(0)" class="text-center" onclick="startup(id);" id="8">
+				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 8
+			</a>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3"  <?php 
+				if(isset($_COOKIE['ban9'])) echo 'style="background-color: #333; "';
+
+
+			 ?>>
 			<a href="javascript:void(0)" class="text-center" onclick="startup(id);" id="9">
 				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 9
 			</a>
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" <?php 
+				if(isset($_COOKIE['ban10'])) echo 'style="background-color: #333; "';
+
+
+			 ?>>
 			<a href="javascript:void(0)" class="text-center" onclick="startup(id);" id="10">
 				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 10
 			</a>
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3"  <?php 
+				if(isset($_COOKIE['ban11'])) echo 'style="background-color: #333; "';
+
+
+			 ?>>
 			<a href="javascript:void(0)" class="text-center"  onclick="startup(id);" id="11">
 				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 11
 			</a>
@@ -132,16 +187,13 @@
 					 </ul>
 				</div>
 				<div class="infomation mt-15">
-			 		<p>	Thành tiền :	<span>123123123</span></p>
-			 		<p>	Tổng giờ :	<span>123123123</span></p>
+			 		<p>	Thành tiền :<span id="totalbill">0</span></p>
+			 		<p>	Tổng giờ :	<span>0</span></p>
 			 		<p>	Khách đưa : <input type="text" name="" value=""> </p>
 			 		<p>	Tiền thừa :&emsp;<input type="text" name="" value=""> </p>
 			 		<p>	<button type="button" name="button"><i class="fas fa-file-export"></i>Xuất bill</button> </p>
 
 				</div>
-
-
-
 
 				</div>
 				<div class="col-md-6 col-xs-12">
@@ -180,7 +232,7 @@
 																<th scope="row">1</th>
 																<td>
 																	<label class="task">
-																		<inpƯut type="checkbox" class="mainlist" name="checkbox" data-ref="1" value="Phin sửa nóng|290000">
+																		<input type="checkbox" class="mainlist" name="checkbox" data-ref="1" value="Phin sửa nóng|290000">
 																		<i class="fas fa-check"></i>
 																		<span class="text">Phin sửa nóng</span>
 																	</label></td>

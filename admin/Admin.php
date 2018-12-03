@@ -129,7 +129,7 @@
 					</div>
 					<!-- train section -->
 					<div class="bhoechie-tab-content">
-						<?php include_once 'resources.php' ?>
+							<?php include_once 'resources.php' ?> 
 					</div>
 
 					<!-- hotel search -->
