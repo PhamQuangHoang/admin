@@ -1,5 +1,8 @@
 <script type="text/javascript" src="js/qlban.js">
+
+
 </script>
+<script src="js/jquery.cookie.js"></script>
 
 <div class="infomation  hidden" id="exchange">
 	<p><button type="button" id="setcookie" name="button"  ><i class="fas fa-exchange-alt" ></i> Về lại quản lý bàn</button></p>
@@ -8,16 +11,16 @@
 <div class="table-responsive" id="mytable"> </div>
 <div id="ordertable">
 	<div class="col-lg-6 col-md-6 col-sm-12-col-xs-12 table-bordered order-table">
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" 	 >
-			<a href="javascript:void(0)" class="text-center" 	 onclick="startup(id);" <?php
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" >
+			<a href="javascript:void(0)" class="text-center"  <?php
 					if(isset($_COOKIE['ban1'])) echo 'style="color: #2ecc71; "';
 
 
-				 ?>  id="1">
+				 ?> onclick="startup(id);" id="1">
 				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 1
 			</a>
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" >
 			<a href="javascript:void(0)" class="text-center"  <?php
 					if(isset($_COOKIE['ban2'])) echo 'style="color: #2ecc71; "';
 
@@ -26,6 +29,7 @@
 				<h3 class="glyphicon glyphicon-glass" ></h3><br/>Bàn 2
 			</a>
 		</div>
+
 		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3" >
 			<a href="javascript:void(0)" class="text-center"  <?php
 					if(isset($_COOKIE['ban3'])) echo 'style="color: #2ecc71; "';
@@ -143,9 +147,8 @@
 							 <button class="dropdown-toggle" data-toggle="dropdown">Thêm
 							 <span class="caret"></span></button>
 							 <ul class="dropdown-menu">
-								 <li><p>	<button type="button" name="button"><i class="fas fa-exchange-alt"></i>Chuyển bàn</button></p></li>
-								 <li><p>	<button type="button" name="button"><i class="fab fa-connectdevelop"></i>Ghép bàn</button></p></li>
-								 <li><p>	<button type="button" name="button"><i class="fas fa-minus-square"></i>Tách bàn</button></p></li>
+								 <li><p>	<button type="button" name="button" id="chuyenban" data-toggle="modal" data-target="#myModal"><i class="fas fa-exchange-alt"></i>Chuyển bàn</button></p></li>
+								 <li><p>	<button type="button" name="button" id="ghepban" data-toggle="modal" data-target="#myModal"><i class="fab fa-connectdevelop"></i>Ghép bàn</button></p></li>
 							 </ul>
 						 </li>
 					</ul>
@@ -186,6 +189,7 @@
 				</div>
 				<div class="infomation mt-15">
 			 		<p>	Thành tiền :<span id="totalbill">0</span></p>
+					<p>	 Ghi chú: <span id="note"></span></p>
 			 		<p>	Tổng giờ :	<span id="timesum">0</span></p>
 			 		<p>	Khách đưa : <input type="text" name="" value=""> </p>
 			 		<p>	Tiền thừa :&emsp;<input type="text" name="" value=""> </p>
@@ -230,31 +234,31 @@
 																<th scope="row">1</th>
 																<td>
 																	<label class="task">
-																		<input type="checkbox" class="mainlist" name="checkbox" data-ref="1" value="Phin sửa nóng|290000">
+																		<input type="checkbox" class="mainlist" name="checkbox" data-ref="1" value="Phin sửa nóng|20000">
 																		<i class="fas fa-check"></i>
 																		<span class="text">Phin sửa nóng</span>
 																	</label></td>
-																<td>290000</td>
+																<td>20000</td>
 															</tr>
 															<tr>
 																<th scope="row">2</th>
 																<td>
 																	<label class="task">
-																		<input type="checkbox"  class="mainlist" name="checkbox" data-ref="2" value="Freeze trà xanh|290000">
+																		<input type="checkbox"  class="mainlist" name="checkbox" data-ref="2" value="Freeze trà xanh|23000">
 																		<i class="fas fa-check"></i>
 																		<span class="text">Freeze trà xanh</span>
 																	</label></td>
-																<td>290000</td>
+																<td>23000</td>
 															</tr>
 															<tr>
 																<th scope="row">3</th>
 																<td>
 																	<label class="task">
-																		<input type="checkbox" class="mainlist" name="checkbox" data-ref="3" value="Caramel phin cafe|290000">
+																		<input type="checkbox" class="mainlist" name="checkbox" data-ref="3" value="Caramel phin cafe|29000">
 																		<i class="fas fa-check"></i>
 																		<span class="text">Caramel phin cafe</span>
 																	</label></td>
-																<td>290000</td>
+																<td>29000</td>
 															</tr>
 
 														</tbody>
@@ -285,3 +289,30 @@
 				</div>
 				</section>
 		</div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" id="titlemd"></h4>
+        </div>
+        <div class="modal-body">
+					<select id="optional">
+						<?php
+							for($i=1;$i<12;$i++){
+								echo' <option value="ban'.$i.'">Bàn '.$i.'</option>';
+							}
+						 ?>
+
+				</select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default"  data-dismiss="modal" id="confirm">Xác nhận</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

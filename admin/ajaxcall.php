@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
  require_once 'config.php';
 	$config = new Config;
 	$result = $config->selectData('select * from type_drink');
@@ -49,11 +49,11 @@ if("" == trim($_POST['joindate'])){
   $table = $_POST['datatable'];
   $ban = "ban".$_POST['ban'];
   $joindate = $_POST['joindate'];
+  $bill = $_POST['bill'];
 
-
-  $array = array("datajoin" =>$joindate , "table"=>$table );
+  $array = array("datajoin" =>$joindate , "table"=>$table,"bill"=>$bill);
   json_encode($array);
-  setcookie($ban, serialize($array), time()+86400 );
+  setcookie($ban, serialize($array), time()+86400 ,"/");
   echo"set thanh cong";
 }
 
@@ -73,11 +73,51 @@ if(isset($_POST['tableid'])){
 }
 
 if(isset($_POST['destroyban'])){
+$cc = $_POST['destroyban'];
+  setcookie($cc, '', 1, "/");
+   setcookie("ghep".$cc, '', 1, "/");
+unset($_COOKIE[$cc]);
+unset($_COOKIE["ghep".$cc]);
 
-  setcookie($_POST['destroyban'], "", time() - 3600);
   echo "Hủy thành công";
 }
 
+if(isset($_POST['action'])){
+    $action = $_POST['action'];
+    $newbat =$_POST['newbat'];
+    $oldbat =$_POST['oldbat'];
+    if($action =="Chuyển bàn"){
+      $data = unserialize($_COOKIE[$oldbat]);
+      setcookie($newbat, serialize($data), time()+86400 ,"/");
+      setcookie($oldbat, '', 1, "/");
+      unset($_COOKIE[$oldbat]);
+
+      echo("Đã chuyển từ ".$oldbat. " sang " .$newbat);
+    }
+    if($action =="Ghép bàn"){
+      if(!isset($_COOKIE[$newbat])){
+        echo $newbat. " chưa khởi tạo ";
+      }else {
+        $dataold = unserialize($_COOKIE[$oldbat]);
+        $datanew = unserialize($_COOKIE[$newbat]);
+        json_encode($dataold);
+        json_encode($datanew);
+
+        $num = intval($dataold['bill']) + intval($datanew['bill']);
+        $result = "Ghép bàn ".str_replace("ban","",$oldbat)." và  bàn ".str_replace("ban","",$newbat)." / Tổng tiền: ".$num;
+        setcookie("ghep".$oldbat, $result, time()+86400 ,"/");
+        setcookie("ghep".$newbat, $result, time()+86400 ,"/");
+        echo $result;
+
+
+
+    }
+  }
+    if("" == trim($action)){
+        echo "404 not found";
+    }
+
+}
 
 
  ?>
