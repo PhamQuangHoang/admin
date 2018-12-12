@@ -7,23 +7,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- Latest compiled JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="test.css?v=<?php echo mt_rand(); ?>">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+	
 </head>
-<script type="text/javascript">
-	// dynamictab
-	$(document).ready(function() {
-	    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
-	        e.preventDefault();
-	        $(this).siblings('a.active').removeClass("active");
-	        $(this).addClass("active");
-	        var index = $(this).index();
-	        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-	        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-	    });
-	});
-</script>
 <body>
 	<div class="container-fluid">
 		<nav class="navbar navbar-inverse">
@@ -43,9 +32,9 @@
 					<ul class="nav navbar-nav navbar-right slide-down">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">ql bán hàng</a>
-							<ul class="dropdown-menu text-light-bg-dark">
-								<li><a href="#">thống kê bill</a></li>
-								<li><a href="#">thống kê thu chi</a></li>
+							<ul class="dropdown-menu text-light-bg-dark" id="nav_child">
+								<li><a href="#" id="tk_bill">thống kê bill</a></li>
+								<li><a href="#" id="tk_thuchi">thống kê thu chi</a></li>
 								<li><a href="#">thống kê theo món</a></li>
 							</ul>
 						</li>
@@ -103,7 +92,7 @@
 			<div class="row bhoechie-tab-container">
 				<div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 bhoechie-tab-menu">
 					<div class="list-group">
-						<a href="#" class="list-group-item active text-center">
+						<a href="#" class="list-group-item text-center active">
 							<h4 class="glyphicon glyphicon-menu-hamburger"></h4><br/>Menu
 						</a>
 						<a href="#" class="list-group-item text-center">
@@ -129,7 +118,7 @@
 					</div>
 					<!-- train section -->
 					<div class="bhoechie-tab-content">
-							<?php include_once 'resources.php' ?> 
+						<?php include_once 'resources.php' ?>
 					</div>
 
 					<!-- hotel search -->
